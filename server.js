@@ -11,7 +11,7 @@ var path = require('path');
 //MIDDELWARES
 app.use(bodyParser.json()); // For parsing application/json
 app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
-app.use(express.static(__dirname + '/public')); // give access for static files location
+app.use(express.static(__dirname + '/whitetest-app/dist/whitetest-app')); // give access for static files location
 app.use('/api',appRoutes); // for backend routes
 app.use(morgan('dev'));
 
@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/tutorial',{ useNewUrlParser: true,us
 });
 
 app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname + '/public/app/views/index.html')); // our main layout
+    res.sendFile(path.join(__dirname + '/whitetest-app/dist/whitetest-app/index.html')); // our main layout
 })
 
 app.listen(port , function(){
