@@ -1,9 +1,9 @@
-var user = require('../models/user');
+var User = require('../models/user');
 
 module.exports = function(router){
 //http://localhost:8080/api/users
-router.post('/users', function(req,res){
-    user=new user();
+router.post('/register', function(req,res){
+    user = new User();
     user.username=req.body.username;
     user.password=req.body.password;
     user.email=req.body.email;

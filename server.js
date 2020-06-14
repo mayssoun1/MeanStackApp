@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 
 
 // Connect to Mongoose
-
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/tutorial',{ useNewUrlParser: true,useUnifiedTopology: true },function(err){
     if(err){
         console.log('Not connected to database' + err);
